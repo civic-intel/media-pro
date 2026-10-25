@@ -1,0 +1,33 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Node.js / Next.js
+node_modules/
+.next/
+out/
+dist/
+npm-debug.log*
+.turbo/
+
+# Go
+/bin/
+/vendor/
+*.test
+coverage.out
+coverage.html
+
+# Editors and operating systems
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/settings.json
+*.swp
+*.swo
+
+# Local databases and generated data
+data/
+*.dump
+*.sql.gz

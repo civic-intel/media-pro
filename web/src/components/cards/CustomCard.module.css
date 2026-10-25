@@ -1,0 +1,151 @@
+
+.customCard {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 260px;
+  overflow: hidden;
+  border: 1px solid var(--line, var(--border));
+  border-radius: 8px;
+  background: var(--surface, #fff);
+  color: var(--foreground, #152b35);
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.customCard:hover {
+  border-color: var(--brand-blue);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 6%);
+}
+
+.customCardLinks a,
+.customCardAction a {
+  color: var(--accent);
+}
+
+.customCardLinks a:focus-visible,
+.customCardAction a:focus-visible {
+  outline-color: var(--focus-ring);
+}
+
+/* Entity classification, image and title */
+
+.customCardHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 22px 24px;
+  border-bottom: 1px solid var(--line, var(--border));
+}
+
+.customCardEyebrow {
+  margin: 0;
+  color: var(--brand-dark);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.customCardImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  overflow: hidden;
+  border: 1px solid var(--line, var(--border));
+  border-radius: 8px;
+  background: var(--surface-muted, #f7f8f5);
+}
+
+.customCardImage img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.customCardTitle {
+  color: var(--brand-blue);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+/* Description and supporting details */
+
+.customCardBody {
+  flex: 1;
+  padding: 22px 24px;
+}
+
+.customCardDescription {
+  color: var(--foreground, #152b35);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.customCardDetails {
+  margin-top: 16px;
+  color: var(--muted, #64748b);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* External source links and primary action */
+
+.customCardFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px 24px;
+  border-top: 1px solid var(--line, var(--border));
+  background: var(--surface-muted, #f7f8f5);
+}
+
+.customCardLinks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+}
+
+.customCardLinks a,
+.customCardAction a {
+  color: var(--teal, var(--highlight));
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.customCardLinks a:hover,
+.customCardAction a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.customCardLinks a:focus-visible,
+.customCardAction a:focus-visible {
+  outline: 2px solid var(--teal, var(--highlight));
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.customCardAction {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .customCard {
+    transition: none;
+  }
+}

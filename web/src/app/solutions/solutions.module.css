@@ -1,0 +1,345 @@
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1.25rem var(--page-gutter);
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.wordmark {
+  flex-shrink: 0;
+  color: var(--brand-dark);
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  text-decoration: none;
+}
+
+.wordmark:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 1.75rem;
+}
+
+.nav a,
+.footer a {
+  color: var(--muted);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.nav a:hover,
+.footer a:hover {
+  color: var(--link);
+  text-decoration: none;
+}
+
+.nav a[aria-current="page"] {
+  color: var(--accent);
+}
+
+.article {
+  width: min(calc(100% - 2.5rem), var(--content-width));
+  margin-inline: auto;
+  flex: 1;
+}
+
+/* Content wrapper used by the solutions overview. */
+.content {
+  width: 100%;
+}
+
+/* Hero sections */
+.hero {
+  padding-block: clamp(3.5rem, 8vw, 6.5rem);
+  border-bottom: 1px solid var(--border);
+}
+
+.hero h1 {
+  max-width: 850px;
+  margin-top: 1rem;
+  color: var(--foreground);
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  font-weight: 750;
+  letter-spacing: -0.045em;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: var(--text-xs);
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.hero p:not(.eyebrow) {
+  max-width: 760px;
+  margin-top: 1.25rem;
+  color: var(--muted);
+  font-size: var(--text-lg);
+  line-height: 1.8;
+}
+
+/* Standard content sections */
+.section {
+  padding-block: clamp(2.5rem, 5vw, 4rem);
+  border-bottom: 1px solid var(--border);
+}
+
+.section h2,
+.contactSection h2 {
+  max-width: 760px;
+  color: var(--foreground);
+  font-size: clamp(1.5rem, 3vw, 2.15rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: var(--leading-heading);
+  text-wrap: balance;
+}
+
+.section p,
+.section li,
+.contactSection p {
+  color: var(--muted);
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+}
+
+.section p {
+  max-width: 780px;
+  margin-top: 1rem;
+}
+
+.section ul {
+  display: grid;
+  gap: 0.9rem;
+  max-width: 780px;
+  margin-top: 1.5rem;
+  padding-left: 1.4rem;
+}
+
+.section li {
+  padding-left: 0.25rem;
+}
+
+.section li::marker {
+  color: var(--accent);
+}
+
+.section strong {
+  color: var(--foreground);
+  font-weight: 700;
+}
+
+/* Inline navigation link */
+.textLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 1.5rem;
+  color: var(--link);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  text-decoration: none;
+  text-underline-offset: 4px;
+}
+
+.textLink::after {
+  content: "→";
+  transition: transform 160ms ease;
+}
+
+.textLink:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+.textLink:hover::after {
+  transform: translateX(3px);
+}
+
+/* Contact panel */
+.contactSection {
+  margin-block: clamp(2.5rem, 5vw, 4rem);
+  padding: clamp(1.5rem, 4vw, 3rem);
+  background: var(--surface-muted);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.contactSection h2 {
+  max-width: 700px;
+}
+
+.contactSection p {
+  max-width: 700px;
+  margin-top: 1rem;
+}
+
+.contactButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.25rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: var(--accent);
+  color: var(--accent-foreground);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    background-color 160ms ease,
+    transform 160ms ease;
+}
+
+.contactButton:hover {
+  background: var(--accent-hover);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.75rem var(--page-gutter);
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.footer p {
+  color: var(--muted);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+
+.footer nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+/* Keyboard accessibility */
+.wordmark:focus-visible,
+.nav a:focus-visible,
+.footer a:focus-visible,
+.textLink:focus-visible,
+.contactButton:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 4px;
+}
+
+/* Tablet and mobile layouts */
+@media (max-width: 760px) {
+  .header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+    padding-block: 1rem;
+  }
+
+  .nav {
+    justify-content: flex-start;
+    gap: 0.75rem 1.25rem;
+  }
+
+  .article {
+    width: min(calc(100% - 2rem), var(--content-width));
+  }
+
+  .hero {
+    padding-block: 3.25rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 7vw, 3rem);
+  }
+
+  .hero p:not(.eyebrow) {
+    font-size: var(--text-base);
+  }
+
+  .section {
+    padding-block: 2.5rem;
+  }
+
+  .contactSection {
+    margin-block: 2rem;
+    padding: 1.5rem;
+  }
+
+  .footer {
+    align-items: flex-start;
+    flex-direction: column;
+    padding-block: 1.5rem;
+  }
+
+  .footer nav {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 420px) {
+  .nav {
+    gap: 0.75rem 1rem;
+  }
+
+  .nav a {
+    font-size: var(--text-xs);
+  }
+
+  .footer nav {
+    gap: 1rem;
+  }
+
+  .contactButton {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wordmark,
+  .nav a,
+  .footer a,
+  .textLink::after,
+  .contactButton {
+    transition: none;
+  }
+
+  .contactButton:hover {
+    transform: none;
+  }
+}

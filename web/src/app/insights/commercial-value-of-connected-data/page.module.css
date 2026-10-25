@@ -1,0 +1,258 @@
+.page {
+  min-height: 100vh;
+  padding-bottom: clamp(3rem, 7vw, 6rem);
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.article {
+  width: min(calc(100% - 2.5rem), 900px);
+  margin-inline: auto;
+}
+
+.hero {
+  padding-block: clamp(3.5rem, 8vw, 6rem);
+  border-bottom: 1px solid var(--border);
+}
+
+.eyebrow,
+.exampleLabel {
+  color: var(--accent);
+  font-size: var(--text-xs);
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 820px;
+  margin-top: 1rem;
+  font-size: clamp(2.35rem, 6vw, 4.25rem);
+  font-weight: 750;
+  letter-spacing: -0.05em;
+  line-height: 1.06;
+  text-wrap: balance;
+}
+
+.intro {
+  max-width: 760px;
+  margin-top: 1.5rem;
+  color: var(--muted);
+  font-size: clamp(1.15rem, 2.5vw, 1.4rem);
+  line-height: 1.75;
+}
+
+.standfirst {
+  max-width: 740px;
+  margin-top: 1rem;
+  color: var(--foreground);
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+}
+
+.articleBody {
+  width: min(100%, 780px);
+  margin-inline: auto;
+}
+
+.articleBody section {
+  padding-block: clamp(2.5rem, 5vw, 4rem);
+  border-bottom: 1px solid var(--border);
+}
+
+.articleBody h2 {
+  max-width: 720px;
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: var(--leading-heading);
+  text-wrap: balance;
+}
+
+.articleBody h3 {
+  margin-top: 0.45rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+}
+
+.articleBody section > p:not(.eyebrow),
+.example > p:not(.exampleLabel),
+.principle p span {
+  display: block;
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+}
+
+.example {
+  margin-top: 1.75rem;
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+
+.example h3 {
+  color: var(--foreground);
+}
+
+.example > p:not(.exampleLabel) {
+  margin-top: 0.8rem;
+}
+
+.sourceLink,
+.textLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 1rem;
+  color: var(--link);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  line-height: 1.6;
+  text-decoration: none;
+  text-underline-offset: 4px;
+}
+
+.sourceLink:hover,
+.textLink:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+.caveat {
+  padding-left: 1rem;
+  border-left: 3px solid var(--border-strong);
+  font-size: var(--text-sm) !important;
+}
+
+.principle {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface-muted);
+}
+
+.principleMark {
+  display: grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  place-items: center;
+  border-radius: var(--radius-sm);
+  background: var(--highlight);
+  color: var(--highlight-foreground);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.principle p {
+  margin: 0;
+}
+
+.principle p strong {
+  display: block;
+  color: var(--foreground);
+  font-size: 1rem;
+}
+
+.principle p span {
+  margin-top: 0.35rem;
+}
+
+.articleBody ul {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 1.25rem;
+  padding-left: 1.4rem;
+}
+
+.articleBody li {
+  padding-left: 0.25rem;
+  color: var(--muted);
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+}
+
+.articleBody li::marker {
+  color: var(--accent);
+}
+
+.articleBody li strong {
+  color: var(--foreground);
+}
+
+.articleBody .closing {
+  margin-top: 2rem;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface-muted);
+}
+
+.closing h2 {
+  margin-top: 0.8rem;
+}
+
+.closing > p:not(.eyebrow) {
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 46px;
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.15rem;
+  border-radius: var(--radius-sm);
+  background: var(--accent);
+  color: var(--accent-foreground);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.cta:hover {
+  background: var(--accent-hover);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.article a:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 4px;
+}
+
+@media (max-width: 600px) {
+  .article {
+    width: min(calc(100% - 2rem), 900px);
+  }
+
+  .hero {
+    padding-block: 3rem;
+  }
+
+  .articleBody section {
+    padding-block: 2.5rem;
+  }
+
+  .articleBody .closing {
+    margin-top: 1.5rem;
+  }
+}

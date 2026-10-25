@@ -1,0 +1,197 @@
+.main {
+  width: min(1200px, calc(100% - 64px));
+  margin: 0 auto;
+  padding: 72px 0 96px;
+}
+
+.intro {
+  max-width: 760px;
+  margin-bottom: 56px;
+}
+
+.eyebrow {
+  margin: 0 0 16px;
+  color: var(--accent);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.intro h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.055em;
+}
+
+.lead {
+  max-width: 650px;
+  margin: 24px 0 0;
+  color: var(--muted);
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.sections {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 64px;
+  align-items: start;
+}
+
+.contactSection,
+.emailSection {
+  min-width: 0;
+}
+
+.contactSection h2,
+.emailSection h2 {
+  margin: 0;
+  font-size: 1.65rem;
+  letter-spacing: -0.035em;
+}
+
+.sectionIntro {
+  margin: 12px 0 28px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.details {
+  display: grid;
+  gap: 28px;
+  margin: 0;
+}
+
+.detail {
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.detail dt {
+  margin-bottom: 10px;
+  font-weight: 650;
+}
+
+.detail dd {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.detail address {
+  font-style: normal;
+}
+
+.detail a,
+.privacyNote a {
+  color: var(--link);
+  text-underline-offset: 3px;
+}
+
+.form {
+  display: grid;
+  gap: 22px;
+}
+
+.messageField {
+  display: grid;
+  gap: 8px;
+}
+
+.messageField label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.messageField textarea {
+  width: 100%;
+  min-height: 150px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm, 5px);
+  background: var(--background);
+  color: var(--foreground);
+  font: inherit;
+  line-height: 1.6;
+  resize: vertical;
+}
+
+.messageField textarea:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.messageField textarea::placeholder {
+  color: var(--muted);
+}
+
+.submitButton {
+  justify-self: start;
+  padding: 12px 20px;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-sm, 5px);
+  background: var(--accent);
+  color: white;
+  font: inherit;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  opacity: 0.9;
+}
+
+.submitButton:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+.privacyNote {
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: var(--text-sm);
+  line-height: 1.7;
+}
+
+.messageField select {
+  width: 100%;
+  min-height: 46px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm, 5px);
+  background: var(--background);
+  color: var(--foreground);
+  font: inherit;
+}
+
+.messageField select:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.honeypot {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+@media (max-width: 760px) {
+  .main {
+    width: calc(100% - 36px);
+    padding: 48px 0 64px;
+  }
+
+  .intro {
+    margin-bottom: 40px;
+  }
+
+  .sections {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
