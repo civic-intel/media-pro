@@ -1,4 +1,3 @@
-
 import { Suspense } from "react";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import styles from "../auth.module.css";
@@ -12,14 +11,12 @@ export const metadata = buildPageMetadata({
 });
 
 type ResetPasswordPageProps = {
-  searchParams: Promise<{ token?: string | string[] }>;
+  searchParams: Promise<{ email?: string | string[] }>;
 };
 
-async function ResetPasswordContent({
-  searchParams,
-}: ResetPasswordPageProps) {
+async function ResetPasswordContent({ searchParams }: ResetPasswordPageProps) {
   const params = await searchParams;
-  const token = typeof params.token === "string" ? params.token : "";
+  const email = typeof params.email === "string" ? params.email : "";
 
   return (
     <main className={styles.page}>
@@ -29,11 +26,11 @@ async function ResetPasswordContent({
         <h1 className={styles.title}>Set a new password</h1>
 
         <p className={styles.description}>
-          Choose a new password for your account. Reset links expire after one
-          hour and can only be used once.
+          Enter the six-digit code sent to your email and choose a new password.
+          Codes expire after 10 minutes.
         </p>
 
-        <ResetPasswordForm token={token} />
+        <ResetPasswordForm initialEmail={email} />
       </section>
     </main>
   );
@@ -47,9 +44,7 @@ export default function ResetPasswordPage({
       fallback={
         <main className={styles.page}>
           <section className={styles.card}>
-            <p className={styles.fallbackText}>
-              Loading password reset form…
-            </p>
+            <p className={styles.fallbackText}>Loading password reset form…</p>
           </section>
         </main>
       }

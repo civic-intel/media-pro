@@ -1,9 +1,11 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
+
 import { resetPassword } from "@/lib/auth/reset-password";
 
 const requestSchema = z.object({
-  token: z.string().min(40).max(100).regex(/^[A-Za-z0-9_-]+$/),
+  email: z.string().trim().email().max(254),
+  code: z.string().regex(/^\d{6}$/),
   password: z.string().min(12).max(128),
 });
 
@@ -20,7 +22,10 @@ export async function POST(request: Request) {
 
   if (!parsed.success) {
     return NextResponse.json(
-      { error: "Enter a valid reset token and a password between 12 and 128 characters." },
+      {
+        error:
+          "Enter a valid email, six-digit reset code and password between 12 and 128 characters.",
+      },
       { status: 400 },
     );
   }
@@ -33,8 +38,8 @@ export async function POST(request: Request) {
         {
           error:
             result.reason === "invalid_input"
-              ? "Enter a valid reset token and password."
-              : "This password-reset link is invalid or has expired. Request a new one.",
+              ? "Enter valid reset details."
+              : "That reset code is invalid, expired or no longer usable. Request a new code.",
         },
         { status: 400 },
       );

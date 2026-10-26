@@ -1,7 +1,7 @@
-
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState, type FormEvent } from "react";
 
 import FormFeedback from "@/components/forms/Form-Feedback";
@@ -9,6 +9,7 @@ import FormField from "@/components/forms/Form-Field";
 import SubmitButton from "@/components/buttons/Submit-Button";
 
 export default function ForgotPasswordForm() {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
@@ -31,16 +32,12 @@ export default function ForgotPasswordForm() {
 
       if (!response.ok) {
         setError(
-          body.error ??
-            "Unable to process your request. Please try again.",
+          body.error ?? "Unable to process your request. Please try again.",
         );
         return;
       }
 
-      setNotice(
-        body.message ??
-          "If an account with that email supports password reset, instructions will be sent.",
-      );
+      router.push(`/reset-password?email=${encodeURIComponent(email.trim())}`);
     } catch {
       setError("Unable to process your request. Please try again.");
     } finally {
@@ -68,16 +65,12 @@ export default function ForgotPasswordForm() {
 
       {notice && <FormFeedback type="success">{notice}</FormFeedback>}
 
-      <SubmitButton
-        loading={submitting}
-        loadingLabel="Sending instructions..."
-      >
-        Send reset instructions
+      <SubmitButton loading={submitting} loadingLabel="Sending code...">
+        Send reset code
       </SubmitButton>
 
       <p>
-        Remembered your password?{" "}
-        <Link href="/login">Back to sign in</Link>
+        Remembered your password? <Link href="/login">Back to sign in</Link>
       </p>
     </form>
   );

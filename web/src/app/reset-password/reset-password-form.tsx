@@ -1,35 +1,36 @@
-
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState, type FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 
 import FormFeedback from "@/components/forms/Form-Feedback";
 import FormField from "@/components/forms/Form-Field";
 import SubmitButton from "@/components/buttons/Submit-Button";
 
 type ResetPasswordFormProps = {
-  token: string;
+  initialEmail: string;
 };
 
 export default function ResetPasswordForm({
-  token,
+  initialEmail,
 }: ResetPasswordFormProps) {
+  const [email, setEmail] = useState(initialEmail);
+  const [code, setCode] = useState("");
   const [password, setPassword] = useState("");
   const [confirmation, setConfirmation] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
   const [notice, setNotice] = useState("");
 
-  useEffect(() => {
-    // Keep the reset token out of the visible URL and future browser history.
-    window.history.replaceState(null, "", window.location.pathname);
-  }, []);
-
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setError("");
     setNotice("");
+
+    if (!/^\\d{6}$/.test(code)) {
+      setError("Enter the six-digit code from your email.");
+      return;
+    }
 
     if (password.length < 12 || password.length > 128) {
       setError("Your password must be between 12 and 128 characters.");
@@ -47,49 +48,64 @@ export default function ResetPasswordForm({
       const response = await fetch("/api/auth/reset-password", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ token, password }),
+        body: JSON.stringify({ email: email.trim(), code, password }),
       });
 
       const body = await response.json();
 
       if (!response.ok) {
         setError(
-          body.error ??
-            "Unable to reset your password. Please try again.",
+          body.error ?? "Unable to reset your password. Please try again.",
         );
         return;
       }
 
+      setCode("");
       setPassword("");
       setConfirmation("");
       setNotice(
-        body.message ??
-          "Your password has been reset. You can now sign in.",
+        body.message ?? "Your password has been reset. You can now sign in.",
       );
     } catch {
-      setError(
-        "Password reset is temporarily unavailable. Please try again.",
-      );
+      setError("Password reset is temporarily unavailable. Please try again.");
     } finally {
       setSubmitting(false);
     }
   }
 
-  if (!token) {
-    return (
-      <div>
-        <FormFeedback type="error">
-          This password-reset link is missing its token. Request a new link to
-          continue.
-        </FormFeedback>
-
-        <Link href="/forgot-password">Request a new reset link</Link>
-      </div>
-    );
-  }
-
   return (
     <form onSubmit={handleSubmit}>
+      <FormField
+        id="email"
+        name="email"
+        label="Email address"
+        type="email"
+        autoComplete="email"
+        autoCapitalize="none"
+        spellCheck={false}
+        required
+        maxLength={254}
+        value={email}
+        onChange={(event) => setEmail(event.target.value)}
+      />
+
+      <FormField
+        id="code"
+        name="code"
+        label="Six-digit reset code"
+        type="text"
+        inputMode="numeric"
+        autoComplete="one-time-code"
+        required
+        minLength={6}
+        maxLength={6}
+        value={code}
+        onChange={(event) =>
+          setCode(event.target.value.replace(/\\D/g, "").slice(0, 6))
+        }
+        hint="Enter the code sent to your email. It expires after 10 minutes."
+      />
+
       <FormField
         id="password"
         name="password"
@@ -130,16 +146,14 @@ export default function ResetPasswordForm({
           <Link href="/login">Sign in</Link>
         </div>
       ) : (
-        <SubmitButton
-          loading={submitting}
-          loadingLabel="Resetting password..."
-        >
+        <SubmitButton loading={submitting} loadingLabel="Resetting password...">
           Reset password
         </SubmitButton>
       )}
 
       <p>
-        <Link href="/forgot-password">Request a new reset link</Link>
+        Need a new code?{" "}
+        <Link href="/forgot-password">Request another code</Link>
       </p>
     </form>
   );
