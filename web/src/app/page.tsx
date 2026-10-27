@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./page.module.css";
@@ -40,7 +39,6 @@ const capabilities = [
       "Support permission-controlled access, traceable data provenance and auditable exchange between authorised parties.",
   },
 ];
-
 
 type AssetCategory = {
   name: string;
@@ -144,12 +142,8 @@ function RelationshipDiagram() {
             <span className={styles.nodeIcon} aria-hidden="true">
               <TrainFront size={24} />
             </span>
-            <span className={styles.nodeLabel}>
-              01 / ESTATE &amp; RIGHTS
-            </span>
-            <span className={styles.nodeName}>
-              Transport operators
-            </span>
+            <span className={styles.nodeLabel}>01 / ESTATE &amp; RIGHTS</span>
+            <span className={styles.nodeName}>Transport operators</span>
             <span className={styles.nodeDescription}>
               Own transport estates, commercial rights and advertising
               opportunities.
@@ -164,13 +158,11 @@ function RelationshipDiagram() {
             <span className={styles.nodeIcon} aria-hidden="true">
               <BriefcaseBusiness size={24} />
             </span>
-            <span className={styles.nodeLabel}>
-              02 / MEDIA REPRESENTATION
-            </span>
+            <span className={styles.nodeLabel}>02 / MEDIA REPRESENTATION</span>
             <span className={styles.nodeName}>Media partners</span>
             <span className={styles.nodeDescription}>
-              Represent commercial media estates, manage inventory, sales
-              and campaign delivery.
+              Represent commercial media estates, manage inventory, sales and
+              campaign delivery.
             </span>
           </div>
 
@@ -182,21 +174,20 @@ function RelationshipDiagram() {
             <span className={styles.nodeIcon} aria-hidden="true">
               <Layers3 size={24} />
             </span>
-            <span className={styles.nodeLabel}>
-              03 / COMMERCIAL ASSETS
-            </span>
-            <span className={styles.nodeName}>
-              Advertising inventory
-            </span>
+            <span className={styles.nodeLabel}>03 / COMMERCIAL ASSETS</span>
+            <span className={styles.nodeName}>Advertising inventory</span>
             <span className={styles.nodeDescription}>
-              Physical and digital environments represented through
-              structured asset information.
+              Physical and digital environments represented through structured
+              asset information.
             </span>
 
             <div className={styles.assetCategoriesList}>
               {assetCategories.map(({ name, icons, description }) => (
                 <div className={styles.assetCategory} key={name}>
-                  <span className={styles.assetCategoryIcons} aria-hidden="true">
+                  <span
+                    className={styles.assetCategoryIcons}
+                    aria-hidden="true"
+                  >
                     {icons.map((Icon, index) => (
                       <Icon key={`${name}-${index}`} size={20} />
                     ))}
@@ -222,8 +213,8 @@ function RelationshipDiagram() {
           <span className={styles.nodeLabel}>INDEPENDENT OVERSIGHT</span>
           <span className={styles.nodeName}>Media auditors</span>
           <span className={styles.nodeDescription}>
-            Review campaign delivery, evidence and contractual reporting
-            on behalf of operators.
+            Review campaign delivery, evidence and contractual reporting on
+            behalf of operators.
           </span>
         </aside>
       </div>
@@ -234,9 +225,7 @@ function RelationshipDiagram() {
           Core commercial relationship
         </span>
         <span>
-          <i
-            className={`${styles.legendLine} ${styles.legendRelationship}`}
-          />
+          <i className={`${styles.legendLine} ${styles.legendRelationship}`} />
           Supporting relationship
         </span>
         <span className={styles.graphFooterNote}>
@@ -263,20 +252,21 @@ function HeroSection() {
         </h1>
 
         <p className={styles.heroText}>
-          Adlas helps UK based transport operators and their Out-of-Home (OOH)
-          media partners optimise their existing media partner integrations to
-          faciliate increased commercial media revenues, benefits from network effects
-          which minimise operational media overheads which translate to frictionless transactions
-          and measurable performance improvements, all without replacing existing platforms or contractual arrangements.
+          Adlas helps UK-based transport operators optimise their Out-of-Home
+          (OOH) media partner integrations. Our platform facilitates increased
+          commercial media revenues, unlocks network effects that minimise
+          operational overheads, and enables frictionless data aggregation with
+          measurable performance improvements—all without replacing existing
+          platforms or contractual arrangements.
         </p>
 
         <div className={styles.heroActions}>
-          <a className={styles.primaryButton} href="/contact">
+          <Link className={styles.primaryButton} href="/contact">
             Discuss an integration <span aria-hidden="true">↗</span>
-          </a>
-          <a className={styles.secondaryButton} href="#capabilities">
+          </Link>
+          <Link className={styles.secondaryButton} href="#capabilities">
             Discover the platform <span aria-hidden="true">↓</span>
-          </a>
+          </Link>
         </div>
 
         <div className={styles.heroFootnote}>
@@ -310,13 +300,12 @@ function RelationshipSection() {
           <div className={styles.eyebrow}>
             THE TRANSPORT OPERATOR OUT OF HOME MEDIA ECOSYSTEM
           </div>
-          <h2 id="ecosystem-heading">
-            Overview
-          </h2>
+          <h2 id="ecosystem-heading">Overview</h2>
         </div>
 
         <p>
-          This is the current Out-Of-Home advertising eco-system of most transport operators in the United Kingdom.
+          This is the current Out-Of-Home advertising eco-system of most
+          transport operators in the United Kingdom.
         </p>
       </div>
 
@@ -381,7 +370,10 @@ function CapabilitiesSection() {
 
       <p>
         Explore our approach to{" "}
-        <Link href="/solutions/market-intelligence/" className={styles.textLink}>
+        <Link
+          href="/solutions/transport-media-inventory-data-integration"
+          className={styles.textLink}
+        >
           transport media data integration
         </Link>{" "}
         and governed information exchange.
@@ -400,13 +392,12 @@ function ApproachSection() {
       <div>
         <h2>Integration without replacing existing systems.</h2>
         <p>
-          Transport operators and media partners already work across
-          different markets and established systems. Adlas is being
-          developed to help them exchange consistent information through
-          reusable integrations. By reducing repeated integration work
-          and making compatible inventory easier to coordinate, the
-          network can support lower operating overheads and broader
-          commercial opportunities as participation grows.
+          Transport operators and media partners already work across different
+          markets and established systems. Adlas is being developed to help them
+          exchange consistent information through reusable integrations. By
+          reducing repeated integration work and making compatible inventory
+          easier to coordinate, the network can support lower operating
+          overheads and broader commercial opportunities as participation grows.
         </p>
       </div>
 
@@ -421,7 +412,6 @@ function ApproachSection() {
         <span className={styles.approachStampLabel}>BUILT FOR</span>
         <strong className={styles.approachStampTitle}>Existing Systems</strong>
       </div>
-
     </section>
   );
 }
@@ -433,6 +423,30 @@ export default function Home() {
       <RelationshipSection />
       <CoverageBar />
       <CapabilitiesSection />
+
+      <section
+        className={styles.insightCallout}
+        aria-labelledby="featured-insight-title"
+      >
+        <div className={styles.insightCalloutCopy}>
+          <span className={styles.insightEyebrow}>FEATURED INSIGHT</span>
+          <h2 id="featured-insight-title">
+            The Commercial Value of Connected Data
+          </h2>
+          <p>
+            Explore how organisations commercialise data through licensing and
+            analytics.
+          </p>
+        </div>
+
+        <Link
+          className={styles.insightLink}
+          href="/insights/commercial-value-of-connected-data/"
+        >
+          Read the article <span aria-hidden="true">→</span>
+        </Link>
+      </section>
+
       <ApproachSection />
     </main>
   );

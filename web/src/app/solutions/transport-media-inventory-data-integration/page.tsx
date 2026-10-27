@@ -8,7 +8,7 @@ export const metadata = buildPageMetadata({
   title: "Transport Media Inventory Data Integration",
   description:
     "Discover how structured transport media inventory data and reusable integrations can help operators and out-of-home media partners coordinate commercial media opportunities.",
-  path: "/solutions/market-intelligence/",
+  path: "/solutions/transport-media-inventory-data-integration/",
 });
 
 export default function TransportMediaIntegrationPage() {
@@ -186,13 +186,13 @@ export default function TransportMediaIntegrationPage() {
             inventory data and interoperability requirements.
           </p>
 
-          <a
+          <Link
             className={styles.contactButton}
             href="/contact"
             aria-label="Email Adlas to discuss transport media data integration"
           >
             Discuss data integration
-          </a>
+          </Link>
         </section>
       </article>
     </main>

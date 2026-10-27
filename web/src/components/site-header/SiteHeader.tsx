@@ -10,7 +10,7 @@ export default function SiteHeader() {
 
   const isSolutionsPage = pathname === "/solutions";
   const isMarketIntelligencePage =
-    pathname === "/solutions/market-intelligence";
+    pathname === "/solutions/transport-media-inventory-data-integration";
 
   return (
     <header className={styles.header}>
@@ -32,7 +32,7 @@ export default function SiteHeader() {
         )}
 
         {!isMarketIntelligencePage && (
-          <Link href="/solutions/market-intelligence">
+          <Link href="/solutions/transport-media-inventory-data-integration">
             Market Intelligence
           </Link>
         )}

@@ -14,43 +14,33 @@ export const metadata = buildPageMetadata({
 export default function SolutionsPage() {
   return (
     <main className={styles.page} aria-label="Adlas solutions">
-      <article
-        className={styles.article}
-        aria-labelledby="page-title"
-      >
+      <article className={styles.article} aria-labelledby="page-title">
         <Breadcrumbs
-          items={[
-            { label: "Home", href: "/" },
-            { label: "Solutions" },
-          ]}
+          items={[{ label: "Home", href: "/" }, { label: "Solutions" }]}
         />
 
         <div className={styles.content}>
-          <section
-            className={styles.hero}
-            aria-labelledby="page-title"
-          >
+          <section className={styles.hero} aria-labelledby="page-title">
             <p className={styles.eyebrow}>ADLAS / SOLUTIONS</p>
 
             <h1 id="page-title">
-              Transport media interoperability for existing commercial
-              estates
+              Transport media interoperability for existing commercial estates
             </h1>
 
             <p>
               Transport operators manage commercial media assets across
               established estates, systems and media-partner arrangements.
-              Exchanging consistent information across those environments can
-              be difficult when inventory structures, attributes and reporting
+              Exchanging consistent information across those environments can be
+              difficult when inventory structures, attributes and reporting
               formats differ.
             </p>
 
             <p>
               Adlas is being developed as an interoperability platform to help
               operators and their existing out-of-home (OOH) advertising media
-              partners exchange governed, consistent transport-media
-              information without requiring wholesale replacement of their
-              existing platforms or contractual arrangements.
+              partners exchange governed, consistent transport-media information
+              without requiring wholesale replacement of their existing
+              platforms or contractual arrangements.
             </p>
           </section>
 
@@ -76,8 +66,8 @@ export default function SolutionsPage() {
               </li>
               <li>
                 <strong>Media-partner integration:</strong> reduce avoidable
-                differences in how operator and concessionaire systems
-                exchange information.
+                differences in how operator and concessionaire systems exchange
+                information.
               </li>
               <li>
                 <strong>Cross-network opportunities:</strong> make compatible
@@ -87,67 +77,53 @@ export default function SolutionsPage() {
             </ul>
           </section>
 
-          <section
-            className={styles.section}
-            aria-labelledby="integration"
-          >
+          <section className={styles.section} aria-labelledby="integration">
             <h2 id="integration">Integrate with existing systems</h2>
 
             <p>
               Adlas is intended to complement existing operator systems and
-              media sales platforms, not replace them. Reusable integrations
-              and a shared canonical data model provide a foundation for
-              consistent information exchange across different technical
-              environments.
+              media sales platforms, not replace them. Reusable integrations and
+              a shared canonical data model provide a foundation for consistent
+              information exchange across different technical environments.
             </p>
 
             <Link
               className={styles.textLink}
-              href="/solutions/market-intelligence/"
+              href="/solutions/transport-media-inventory-data-integration/"
               aria-label="Explore transport media data integration solutions"
             >
               Explore transport media data integration
             </Link>
           </section>
 
-          <section
-            className={styles.section}
-            aria-labelledby="governance"
-          >
-            <h2 id="governance">
-              Governance, provenance and traceability
-            </h2>
+          <section className={styles.section} aria-labelledby="governance">
+            <h2 id="governance">Governance, provenance and traceability</h2>
 
             <p>
               Commercial information must be exchanged in line with agreed
-              access rights and responsibilities. Adlas&apos;s intended
-              approach includes permission-controlled data access, traceable
-              provenance and auditable exchange, subject to the capabilities
-              implemented and the agreements governing each integration.
+              access rights and responsibilities. Adlas&apos;s intended approach
+              includes permission-controlled data access, traceable provenance
+              and auditable exchange, subject to the capabilities implemented
+              and the agreements governing each integration.
             </p>
           </section>
 
-          <section
-            className={styles.contactSection}
-            aria-labelledby="contact"
-          >
-            <h2 id="contact">
-              Discuss your interoperability requirements
-            </h2>
+          <section className={styles.contactSection} aria-labelledby="contact">
+            <h2 id="contact">Discuss your interoperability requirements</h2>
 
             <p>
               For transport operators and OOH media partners evaluating
-              commercial estate data integration, contact Adlas to discuss
-              your existing systems and information-exchange requirements.
+              commercial estate data integration, contact Adlas to discuss your
+              existing systems and information-exchange requirements.
             </p>
 
-            <a
+            <Link
               className={styles.contactButton}
               href="/contact"
               aria-label="Email Adlas about transport media interoperability"
             >
               Contact Adlas
-            </a>
+            </Link>
           </section>
         </div>
       </article>

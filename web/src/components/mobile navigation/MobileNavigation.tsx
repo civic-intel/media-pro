@@ -38,7 +38,10 @@ export default function MobileNavigation() {
           <Link href="/#capabilities" onClick={closeMenu}>
             Capabilities
           </Link>
-          <Link href="/solutions/market-intelligence/" onClick={closeMenu}>
+          <Link
+            href="/solutions/transport-media-inventory-data-integration/"
+            onClick={closeMenu}
+          >
             Data integration
           </Link>
           <Link

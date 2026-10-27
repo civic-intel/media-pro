@@ -67,7 +67,9 @@ export default function CommercialValueOfConnectedDataPage() {
                 Royal Mail’s Postcode Address File (PAF) provides a reference
                 dataset of UK addresses. Organisations can obtain access under
                 applicable licensing arrangements to support address matching,
-                validation and related business processes.
+                validation and related business processes. Used in e-commerce
+                checkouts, logistics and delivery, CRM & database management,
+                and fraud prevention & compliance.
               </p>
               <a
                 className={styles.sourceLink}
@@ -85,10 +87,12 @@ export default function CommercialValueOfConnectedDataPage() {
               <h3>Experian: information combined with services</h3>
               <p>
                 Experian illustrates a different model: data and analytical
-                capabilities are used to provide services that help organisations
-                assess customers, understand risk and make decisions. Value
-                comes from more than the existence of a dataset; it also comes
-                from how information is processed and applied.
+                capabilities are used to provide services that help
+                organisations assess customers, understand risk and make
+                decisions. Value comes from more than the existence of a
+                dataset; it also comes from how information is processed and
+                applied. Used in financial services & lending, fraud prevention
+                & identity verification, and background checks.
               </p>
               <a
                 className={styles.sourceLink}
@@ -108,7 +112,10 @@ export default function CommercialValueOfConnectedDataPage() {
                 Ordnance Survey supplies mapping and location data for use in
                 business and public-sector applications. Its data offerings
                 demonstrate how consistent geographic reference information can
-                support other products, services and decisions.
+                support other products, services and decisions. Used for urban
+                planning, property & construction, emergency services & public
+                safety, navigation & logistics, environmental & land management,
+                and outdoor recreation & tourism.
               </p>
               <a
                 className={styles.sourceLink}
@@ -122,8 +129,8 @@ export default function CommercialValueOfConnectedDataPage() {
             </div>
 
             <p className={styles.caveat}>
-              These examples illustrate different commercial approaches. They
-              do not imply that all data is available for resale or unrestricted
+              These examples illustrate different commercial approaches. They do
+              not imply that all data is available for resale or unrestricted
               reuse; access and permitted use depend on the relevant terms and
               applicable law.
             </p>
@@ -153,9 +160,9 @@ export default function CommercialValueOfConnectedDataPage() {
               <p>
                 <strong>Connected information creates options.</strong>
                 <span>
-                  Consistent data can make new analysis, services and
-                  commercial relationships possible—but the outcome depends on
-                  data quality, permissions and real customer demand.
+                  Consistent data can make new analysis, services and commercial
+                  relationships possible—but the outcome depends on data
+                  quality, permissions and real customer demand.
                 </span>
               </p>
             </div>
@@ -166,11 +173,11 @@ export default function CommercialValueOfConnectedDataPage() {
               What this could mean for transport media
             </h2>
             <p>
-              Transport operators and their out-of-home (OOH) media partners
-              may each hold information relevant to commercial media
-              opportunities. That can include asset identifiers, locations,
-              formats, availability, audience measures and campaign reporting.
-              The information may be managed across different organisations and
+              Transport operators and their out-of-home (OOH) media partners may
+              each hold information relevant to commercial media opportunities.
+              That can include asset identifiers, locations, formats,
+              availability, audience measures and campaign reporting. The
+              information may be managed across different organisations and
               technical systems.
             </p>
             <p>
@@ -214,7 +221,10 @@ export default function CommercialValueOfConnectedDataPage() {
               data ownership checks, licensing terms, privacy safeguards or
               clear agreements between participating organisations.
             </p>
-            <Link className={styles.textLink} href="/solutions/market-intelligence/">
+            <Link
+              className={styles.textLink}
+              href="/solutions/transport-media-inventory-data-integration/"
+            >
               Explore transport media data integration
             </Link>
           </section>
@@ -249,8 +259,8 @@ export default function CommercialValueOfConnectedDataPage() {
             <p>
               Each sector has different legal, technical and commercial
               constraints. The common question is whether consistent, permitted
-              information exchange can solve a real problem for the organisations
-              involved.
+              information exchange can solve a real problem for the
+              organisations involved.
             </p>
           </section>
 

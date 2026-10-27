@@ -20,7 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${SITE_URL}/solutions/market-intelligence/`,
+      url: `${SITE_URL}/solutions/transport-media-inventory-data-integration/`,
       changeFrequency: "monthly",
       priority: 0.8,
     },
